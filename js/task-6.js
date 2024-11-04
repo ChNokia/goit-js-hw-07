@@ -33,7 +33,7 @@ function destroyBoxes() {
 
 function createBoxes(amount) {
   let boxSize = 30;
-  const result = [];
+  const fragment = document.createDocumentFragment();
 
   boxes.innerHTML = "";
 
@@ -42,10 +42,10 @@ function createBoxes(amount) {
     boxDiv.style.backgroundColor = getRandomHexColor();
     boxDiv.style.width = `${boxSize}px`;
     boxDiv.style.height = `${boxSize}px`;
-    result.push(boxDiv);
+    fragment.appendChild(boxDiv);
 
     boxSize += 10;
   }
 
-  boxes.append(...result);
+  boxes.appendChild(fragment);
 }
